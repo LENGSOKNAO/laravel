@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('banner_name');
             $table->text('banner_description')->nullable();  
             $table->string('banner_image');
+            $table->string('banner_small_image');
+            $table->string('banner_slide_image');
             $table->boolean('banner_is_enabled')->default(true);  
             $table->string('banner_brand')->nullable();
             $table->timestamps();

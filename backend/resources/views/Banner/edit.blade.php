@@ -165,31 +165,49 @@
 <x-layout>
     <div class="container">
         <x-Nav> 
-    <h2>Edit Banner</h2>
-    <form action="{{ route('banner.update', $banner->id) }}" method="post" enctype="multipart/form-data">
-        @csrf
-        @method('PUT')
+            <h2>Edit Banner</h2>
+            <form action="{{ route('banner.update', $banner->id) }}" method="post" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
 
-        <label for="banner_name">Banner Name:</label>
-        <input type="text" name="banner_name" value="{{ $banner->banner_name }}" required>
+                <label for="banner_name">Banner Name:</label>
+                <input type="text" id="banner_name" name="banner_name" value="{{ old('banner_name', $banner->banner_name) }}" required>
 
-      
-        <img src="{{ asset('storage/' . $banner->banner_image) }}" alt="Banner Image" width="100">
-        <input type="file" name="banner_image">
+                <!-- Banner Images -->
+                <div class="image-upload">
+                    <label for="banner_image">Banner Image:</label>
+                    <img src="{{ asset('storage/' . $banner->banner_image) }}" alt="Banner Image" width="100">
+                    <input type="file" id="banner_image" name="banner_image" accept="image/*">
+                </div>
 
-        <label for="banner_description">Description:</label>
-        <textarea name="banner_description">{{ $banner->banner_description }}</textarea>
+                <div class="image-upload">
+                    <label for="banner_small_image">Small Banner Image:</label>
+                    <img src="{{ asset('storage/' . $banner->banner_small_image) }}" alt="Small Banner Image" width="100">
+                    <input type="file" id="banner_small_image" name="banner_small_image" accept="image/*">
+                </div>
 
-        <label for="banner_brand">Brand:</label>
-        <input type="text" name="banner_brand" value="{{ $banner->banner_brand }}">
-        
-        <div class="form-group checkbox-group">
-            <label for="banner_is_enabled">Enable:</label>
-            <input type="checkbox" id="banner_is_enabled" name="banner_is_enabled" value="1" {{ $banner->banner_is_enabled ? 'checked' : '' }}>
-        </div>
-        
-        <button type="submit"  class="btn-submit" >Update Banner</button>    
-    </form>
-</x-Nav> 
-</div>
+                <div class="image-upload">
+                    <label for="banner_slide_image">Slide Banner Image:</label>
+                    <img src="{{ asset('storage/' . $banner->banner_slide_image) }}" alt="Slide Banner Image" width="100">
+                    <input type="file" id="banner_slide_image" name="banner_slide_image" accept="image/*">
+                </div>
+
+                <label for="banner_description">Description:</label>
+                <textarea id="banner_description" name="banner_description">{{ old('banner_description', $banner->banner_description) }}</textarea>
+
+                <label for="banner_brand">Brand:</label>
+                <input type="text" id="banner_brand" name="banner_brand" value="{{ old('banner_brand', $banner->banner_brand) }}">
+
+                <div class="form-group checkbox-group">
+                    <label>
+                        <input type="checkbox" id="banner_is_enabled" name="banner_is_enabled" value="1" {{ old('banner_is_enabled', $banner->banner_is_enabled) ? 'checked' : '' }}>
+                        Enable
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-submit">Update Banner</button>    
+            </form>
+        </x-Nav> 
+    </div>
 </x-layout>
+

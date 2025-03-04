@@ -182,8 +182,18 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="banner_image">Image</label>
+                    <label for="banner_image">banner image</label>
                     <input type="file" name="banner_image" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="banner_small_image">banner small image</label>
+                    <input type="file" name="banner_small_image" accept="image/*" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="banner_slide_image">banner slide image</label>
+                    <input type="file" name="banner_slide_image" accept="image/*" required>
                 </div>
 
                 <div class="form-group">

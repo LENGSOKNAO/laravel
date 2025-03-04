@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+.flex-center {
+  @apply flex justify-center items-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+/* list nav small */
+.list-small {
+  @apply px-5 hover:text-[rgba(0,0,0,0.6)] py-1;
+}
+.bg-absolute{
+  @apply absolute right-0 top-0 h-full bg-[#fff]
+}
+.list-nav-small{
+  @apply text-lg px-5 font-medium text-[rgba(0,0,0,0.7)]
+}
+.h2{
+  @apply text-xl font-semibold p-2 
+}
+
+/* list nav big */
+
+.list-nav-big{
+  @apply text-sm font-medium text-[rgba(0,0,0,0.7)] hover:text-[rgba(0,0,0,0.9)] 
+}
